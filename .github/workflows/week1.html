@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>FORS WEEK 1</title>	
+</head>
+<style>
+ * {box-sizing: border-box; 
+    font-family: 'Kaushan Script', cursive;}
+	main { 
+	width: 800px; 
+	min-height: 500px; 
+	border: 3px solid grey; 
+	border-radius: 25px;
+	margin: 100px auto 0px auto;
+	background-image: linear-gradient(to bottom right, #e699ff, #d24dff);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 20px;
+	text-align: center;
+    color: #FFFFFF;
+	}
+	section { 
+		width:100%;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		padding: 20px;
+		border-radius: 25px;
+		background-image: linear-gradient(to bottom right, #d24dff, #e699ff);
+	}
+</style>
+<body>
+<main>
+	<h1>Fernando Fors</h1>
+<section>
+  <h1>Finding the third angle of a triangle </h1>
+  <p>Finding the third angle of a triangle when you know the measurements of the other two angles is easy.<br>
+	 All you've got to do is subtract the other angle measurements from 180° to get the measurement of the third angle.</p>
+  <p id="answer"></p>	
+  <script>
+    const angle1 = parseInt(prompt("Please enter the first angle of the triangle: "));
+    const angle2 = parseInt(prompt("Now enter the second angle pf the triangle: "));
+    const angle3 = 180 - (angle1 + angle2);
+    document.getElementById("answer").innerHTML = "In this triangle: the third angle is equals to: "+ angle3 +" degrees. Consequently: "  + angle1 + " + " + angle2 + " + " + angle3 + "  = 180 degrees.";    
+  </script>
+</section>	
+<section>
+  <h1>Cost of the meal</h1>
+  <p>total = meal + ((tip * meal) / 100)</p>
+  <p id="answer2"></p>
+  <script>
+    const meal = parseInt(prompt("Please enter the cost of the Meal?: "));
+    const tip = parseInt(prompt("Now enter the tip porcentage to add?:"));
+    const total = meal + ((tip * meal) / 100);
+    document.getElementById("answer2").innerHTML = " The Total Cost of the Meal is: $ " + total; 
+  </script>
+</section>
+<section>
+  <h1>Right Triangle</h1>
+  <p>A triangle is a right-angle triangle if one of the three angles in the triangle is 90 degree. And one angle in the triangle is 90 degrees when the square of the longest side is equal to the sum of squares of the other two sides.</p>
+  <p id="answer3"></p>
+  <script>
+    const side1 = parseInt(prompt("Enter the first side od the triangle: "));
+    const side2 = parseInt(prompt("Enter the second side of the triangle:"));
+    const side3 = Math.sqrt((Math.pow(side1,2)) + (Math.pow(side2,2)));
+    document.getElementById("answer3").innerHTML = " The third side of the Right-triangle is: " + side3; 
+  </script>
+</section>	
+</main>	
+</body>
+</html>
