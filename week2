@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<title>FORS WEEK 1</title>	
+</head>
+<style>
+ * {box-sizing: border-box; 
+    font-family: 'Kaushan Script', cursive;}
+	main { 
+	width: 640px; 
+	min-height: 500px; 
+	border: 3px solid grey; 
+	border-radius: 25px;
+	margin: 100px auto 100px auto;
+	background-image: linear-gradient(to bottom right, #cce6ff, #6666ff);
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 20px;
+	text-align: center;
+    color: #FFFFFF;
+	}
+	section { 
+	width:100%;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	padding: 20px;
+	border-radius: 25px;
+	background-image: linear-gradient(to bottom right, #6666ff, #cce6ff); 
+	margin: 10px auto 10px auto;
+	border: 2px solid white;
+	}
+</style>
+	
+	
+<body>
+	
+<main>
+<h1>Fernando Fors</h1>
+	
+	
+<section>
+  <h1>Finding the third angle of a triangle </h1>
+  <p>Finding the third angle of a triangle when you know the measurements of the other two angles is easy.<br>
+	 All you've got to do is subtract the other angle measurements from 180° to get the measurement of the third angle.</p>
+	
+	
+<form action="indexweek2.html" method="GET" id="angle">
+  
+    <div class="form-group">
+      <label for="angle1">Angle1:</label>
+      <input type="number" class="form-control" id="angle1" placeholder="Enter angle 1" name="angle1">
+    </div>
+		
+    <div class="form-group">
+      <label for="angle2">Angle2:</label>
+      <input type="number" class="form-control" id="angle2" placeholder="Enter angle2" name="angle2">
+    </div>
+			
+    <button type="submit" class="btn btn-primary" id="submit1">Submit</button>
+		
+    <p id="answer1">Answer</p>
+		
+</form>
+</section>	
+	
+	
+	
+	
+<section>
+	
+  <h1>Cost of the meal</h1>
+	
+  <p>total = meal + ((tip * meal) / 100)</p>
+	
+	
+<form action="indexweek2.html" method="GET" id="mealcost">
+  
+    <div class="form-group">
+      <label for="meal">Enter cost of the meal:</label>
+      <input type="number" class="form-control" id="meal" placeholder="Cost of the meal" name="meal">
+    </div>
+		
+    <div class="form-group">
+      <label for="tip">Tip:</label>
+      <input type="number" class="form-control" id="tip" placeholder="Enter tip" name="tip">
+    </div>
+			
+    <button type="submit" class="btn btn-primary" id="submit2">Submit</button>
+	
+	<p id="answer2">Answer</p>
+		
+</form>
+</section>
+	
+<section>
+  <h1>Right Triangle</h1>
+  <p>A triangle is a right-angle triangle if one of the three angles in the triangle is 90 degree. And one angle in the triangle is 90 degrees when the square of the longest side is equal to the sum of squares of the other two sides.</p>
+ 
+	
+	<form action="indexweek2.html" method="GET" id="side3">
+  
+    <div class="form-group">
+      <label for="side1">Side1:</label>
+      <input type="number" class="form-control" id="side1" placeholder="Side1" name="side1">
+    </div>
+		
+    <div class="form-group">
+      <label for="side2">Side2:</label>
+      <input type="number" class="form-control" id="side2" placeholder="Side2" name="side2">
+    </div>
+			
+    <button type="submit" class="btn btn-primary" id="submit3">Submit</button>
+	
+	<p id="answer3">Answer</p>
+		
+</form>
+</section>	
+	
+	
+<script>
+	
+const $ = function(selector) {return document.querySelector(selector); };
+	
+const calculate = evt => {	
+	
+if (document.querySelector("#angle1").value == "") { alert("Angle 1 is required.");
+	evt.preventDefault();} 
+	
+else {
+	  
+const angle1 = $("#angle1").value; alert(angle1);
+	  
+const angle2 = $("#angle2").value; alert(angle2);
+      
+let angle3 = 180 - ( angle1 + angle2 ) ; alert(angle3);
+	  
+document.getElementById("answer1").innerHTML = "In this triangle: the third angle is equals to: " + angle3 + " degrees.";}};
+	  
+document.addEventListener("DOMContentLoaded", () => {$("#submit1").addEventListener("click", calculate);});
+	  
+
+	  
+const mealcost = evt => {
+	  
+const meal = $("#meal").value; alert(meal);
+	  
+const tip = $("#tip").value; alert(tip);
+      
+const total = meal + ((tip * meal) / 100); ; alert(total);
+	  
+document.getElementById("answer2").innerHTML = "The total cost of the meal is: " + total;};
+	  
+document.addEventListener("DOMContentLoaded", () => {$("#submit2").addEventListener("click", mealcost);});
+	
+	
+
+	
+	
+	
+const side2calc = evt => {
+	  
+const side1 = $("#side1").value; alert(side1);
+	  
+const side2 = $("#side2").value; alert(side2);
+      
+const side3 = Math.sqrt((Math.pow(side1,2)) + (Math.pow(side2,2))); ; alert(side3);
+	  
+document.getElementById("answer3").innerHTML = "Side 3 is: " + side3;};
+	  
+document.addEventListener("DOMContentLoaded", () => {$("#submit3").addEventListener("click", side2calc);});
+	  
+</script>
+</main>	
+</body>
+</html>
